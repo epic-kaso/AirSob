@@ -18,9 +18,9 @@ Add `'airsob' => [
 
  # AirSob notifications channel for Laravel 5.3
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/AirSob.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/AirSob)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/kasoprecede47/air-sob.svg?style=flat-square)](https://packagist.org/packages/kasoprecede47/air-sob)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/AirSob.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/AirSob)
+[![Total Downloads](https://img.shields.io/packagist/dt/kasoprecede47/air-sob.svg?style=flat-square)](https://packagist.org/packages/kasoprecede47/air-sob)
 
 This package makes it easy to send [AirSob notifications](https://airsob.com/) with  Laravel 5.3.
 
