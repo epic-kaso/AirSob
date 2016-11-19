@@ -40,11 +40,11 @@ class AirSobChannel {
      */
     public function send($notifiable, Notification $notification)
     {
-        if (! $to = $notifiable->routeNotificationFor('airsob')) {
+        if (! $to = $notifiable->routeNotificationFor('air-sob')) {
             throw CouldNotSendNotification::missingTo();
         }
-        $message = $notification->toAirsob($notifiable);
-        
+        $message = $notification->toAirSob($notifiable);
+
         if (is_string($message)) {
             $message = new AirSobMessage($message);
         }

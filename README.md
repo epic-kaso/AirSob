@@ -68,7 +68,7 @@ class ValentineDateApproved extends Notification
         return [AirSobChannel::class];
     }
 
-    public function toAirsob($notifiable)
+    public function toAirSob($notifiable)
     {
         return (new AirSobMessage('Your {$notifiable->service} account was approved!'));
     }
