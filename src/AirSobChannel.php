@@ -44,11 +44,15 @@ class AirSobChannel {
             throw CouldNotSendNotification::missingTo();
         }
         $message = $notification->toAirsob($notifiable);
+        
         if (is_string($message)) {
-            $message = new AirSobMessage($to,$message);
+            $message = new AirSobMessage($message);
         }
+
+        $message->setDestination($to);
+
         try {
-            $response = $this->airsob->sendSMS($message)->getResponse();
+            $response = $this->airsob->sendSMS($message);
             return $response;
         } catch (Exception $exception) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($exception);
