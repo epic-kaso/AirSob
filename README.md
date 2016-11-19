@@ -1,22 +1,4 @@
-# AirSob
-A Laravel 5.3 Notification/PHP Library for Airsob
-
-# To Use
-
-Run `composer require kasoprecede47/air-sob`
-
-#For Laravel Users
-Add `AirSob\AirSobServiceProvider::class` to `app.php` 
-
-Add `'airsob' => [
-        'service_id' => 'Your Service Id',
-        'service_key' => 'Your Key',
-        'format' => 'json'
-    ]` to `services.php`
-
-
-
- # AirSob notifications channel for Laravel 5.3
+# AirSob notifications channel for Laravel 5.3
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kasoprecede47/air-sob.svg?style=flat-square)](https://packagist.org/packages/kasoprecede47/air-sob)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -75,8 +57,8 @@ Add your AirSob Account Key, Acess Token, and From Number (optional) to your `co
 Now you can use the channel in your `via()` method inside the notification:
 
 ``` php
-use NotificationChannels\AirSob\AirSobChannel;
-use NotificationChannels\AirSob\AirSobMessage;
+use AirSob\AirSobChannel;
+use AirSob\AirSobMessage;
 use Illuminate\Notifications\Notification;
 
 class ValentineDateApproved extends Notification
