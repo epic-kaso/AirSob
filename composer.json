@@ -1,0 +1,21 @@
+{
+    "name": "kasoprecede47/air-sob",
+    "description": "Airsob Php & Laravel Lib",
+    "type": "library",
+    "require": {
+        "illuminate/notifications": "5.3.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ak",
+            "email": "kasoprecede47@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AirSob\\": "src"
+        }
+    }
+}
