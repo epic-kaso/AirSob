@@ -23,21 +23,21 @@ class AirSob{
 		return $this->handleSendMessage($message);
 	}
 
-	private function handleSendMessage(AirSobMessage $message){
-		$message = $message->getMessage();
-		$number = $message->getDestination();
+	private function handleSendMessage(AirSobMessage $message_obj){
+		$message = $message_obj->getMessage();
+		$number = $message_obj->getDestination();
 		$service_id = $this->service_id;
 		$format = $this->format;
 		$service_key = $this->service_key;
 		$data = $message . ':' . $number . ':' . $service_id;
 		$signature = hash_hmac('sha256', $data, $service_key);
-		
+
 		$values = array('message' => $message,
-		                  'number' => $number,
-		                  'service_id' => $service_id,
-		                  'signature' => $signature,
-		                  'format' => $format
-		                  );
+			'number' => $number,
+			'service_id' => $service_id,
+			'signature' => $signature,
+			'format' => $format
+		);
 		$query = http_build_query($values);
 		$url = $this->sms_url . "?" . $query;
 		$ch = curl_init();
