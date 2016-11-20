@@ -43,6 +43,11 @@ class AirSob{
 			'signature' => $signature,
 			'format' => $format
 		);
+
+		if($this->logger){
+			$this->logger->error($values);
+		}
+
 		$query = http_build_query($values);
 		$url = $this->sms_url . "?" . $query;
 		$ch = curl_init();

@@ -12,12 +12,10 @@ class AirSobServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->when(AirSobChannel::class)
-            ->needs(AirSobClient::class)
-            ->give(function () {
+        $this->app->singleton(AirSobClient::class,function () {
                 $config = config('services.airsob');
 
-                if (is_null($config)) {
+                if (is_null($config) || empty($config['service_key']) || empty($config['service_id'])) {
                     throw InvalidConfiguration::configurationNotSet();
                 }
                 
