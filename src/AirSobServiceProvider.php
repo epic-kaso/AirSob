@@ -2,7 +2,9 @@
 namespace AirSob;
 use AirSob\Exceptions\InvalidConfiguration;
 use AirSob\AirSob as AirSobClient;
+use Illuminate\Contracts\Logging\Log;
 use Illuminate\Support\ServiceProvider;
+
 class AirSobServiceProvider extends ServiceProvider
 {
     /**
@@ -22,7 +24,8 @@ class AirSobServiceProvider extends ServiceProvider
                 return new AirSobClient(
                     $config['service_key'],
                     $config['service_id'],
-                    data_get($config,'format','json')
+                    data_get($config,'format','json'),
+                    app(Log::class)
                 );
             });
     }

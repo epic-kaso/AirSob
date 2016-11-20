@@ -10,12 +10,17 @@ class AirSob{
 	protected $service_key;
 	protected $format;
 	protected $sms_url = "https://api.airsob.com/sms/";
+	/**
+	 * @var null
+	 */
+	private $logger;
 
-	public function __construct($service_key,$service_id,$format = 'json')
+	public function __construct($service_key,$service_id,$format = 'json',$logger = null)
 	{
 		$this->service_key = $service_key;
 		$this->service_id = $service_id;
 		$this->format = $format;
+		$this->logger = $logger;
 	}
 
 	public function sendSMS(AirSobMessage $message)
@@ -47,6 +52,10 @@ class AirSob{
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		$response = curl_exec($ch);
 		curl_close($ch);
+
+		if($this->logger){
+			$this->logger->error($response);
+		}
 
 		if($format == 'json'){
 			return @json_decode($response);

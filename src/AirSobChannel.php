@@ -53,6 +53,7 @@ class AirSobChannel {
 
         try {
             $response = $this->airsob->sendSMS($message);
+                
             return $response;
         } catch (Exception $exception) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($exception);
