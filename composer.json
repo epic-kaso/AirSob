@@ -3,8 +3,8 @@
     "description": "Airsob Php & Laravel Lib",
     "type": "library",
     "require": {
-        "illuminate/notifications": "5.3.*",
-        "illuminate/support": "5.1.*|5.2.*|5.3.*"
+        "illuminate/notifications": "5.3.*|5.4.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*"
     },
     "license": "MIT",
     "authors": [
