@@ -16,10 +16,13 @@ class AirSobMessage{
 	  		$this->destination = is_array($destination) ? implode(',', $destination) : $destination;
 	  }
 
-	  public function setMesssage($message)
-	  {
-	  		$this->message = $message;
-	  }
+	
+	// THIS METHOD IS REDUNDANT. THE CONSTRUCTOR ALREADY DOES DAT
+	
+//	  public function setMesssage($message)
+//	  {
+//	  		$this->message = $message;
+//	  }
 
 	  public function getDestination()
 	  {
